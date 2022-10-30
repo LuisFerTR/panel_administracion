@@ -1,4 +1,3 @@
-<?php error_reporting(-1); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +51,7 @@
                   <h3 class="card-title" style="flex: 0 0 50%">Información de las piezas registradas.</h3>
 
                   <div class="d-flex justify-content-end" style="flex: 0 0 50%">
-                    <a class="btn btn-app bg-success">
+                    <a class="btn btn-app bg-success" href="./crear_pieza.php">
                       <i class="fas fa-plus"></i> Crear
                     </a>
                   </div>

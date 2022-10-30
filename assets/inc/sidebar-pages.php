@@ -76,7 +76,6 @@
                         <i class="nav-icon fas fa-tools"></i>
                         <p>
                             Piezas
-                            <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
                 </li>
@@ -85,7 +84,6 @@
                         <i class="nav-icon fas fa-robot"></i>
                         <p>
                             Máquinas
-                            <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
                 </li>
