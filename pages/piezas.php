@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Piezas</title>
 
-  <?php include "../assets/inc/meta-pages.php"; ?>
+  <?php include_once "../assets/inc/meta-pages.php"; ?>
   <!-- DataTables -->
   <link rel="stylesheet" href="../assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -15,14 +15,13 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
-  <? require dirname(__DIR__, 1) . 'scripts/dibujar_tabla.php'; ?>
   <div class="wrapper">
     <!-- Navbar -->
-    <?php include "../assets/inc/nav-pages.php"; ?>
+    <?php include_once "../assets/inc/nav-pages.php"; ?>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <?php include "../assets/inc/sidebar-pages.php"; ?>
+    <?php include_once "../assets/inc/sidebar-pages.php"; ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -31,12 +30,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>DataTables</h1>
+              <h1>Piezas</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">DataTables</li>
+                <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
+                <li class="breadcrumb-item active">Piezas</li>
               </ol>
             </div>
           </div>
@@ -49,14 +48,22 @@
           <div class="row">
             <div class="col-12">
               <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <div class="card-header d-flex justify-content-between align-items-center" style="width: 100%;">
+                  <h3 class="card-title" style="flex: 0 0 50%">Información de las piezas registradas.</h3>
+
+                  <div class="d-flex justify-content-end" style="flex: 0 0 50%">
+                    <a class="btn btn-app bg-success">
+                      <i class="fas fa-plus"></i> Crear
+                    </a>
+                  </div>
+
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                   <?php
-                  echo "Hola";
-                  dibujar_tabla('piezageneral');
+                  require_once(dirname(__DIR__, 1) . '/scripts/dibujar_tabla.php');
+
+                  dibujar_tabla("piezageneral");
                   ?>
                 </div>
                 <!-- /.card-body -->
@@ -73,7 +80,7 @@
     </div>
     <!-- /.content-wrapper -->
 
-    <?php include "../assets/inc/footer-pages.php"; ?>
+    <?php include_once "../assets/inc/footer-pages.php"; ?>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -83,7 +90,7 @@
   </div>
   <!-- ./wrapper -->
 
-  <?php include "../assets/inc/js-imports.php"; ?>
+  <?php include_once "../assets/inc/js-imports.php"; ?>
   <!-- AdminLTE for demo purposes -->
   <script src="../dist/js/demo.js"></script>
 </body>

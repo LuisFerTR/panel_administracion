@@ -21,11 +21,11 @@
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <!-- Navbar -->
-    <?php include "./assets/inc/nav.php"; ?>
+    <?php include_once "./assets/inc/nav.php"; ?>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <?php include "./assets/inc/sidebar.php"; ?>
+    <?php include_once "./assets/inc/sidebar.php"; ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -307,7 +307,7 @@
     <!-- /.control-sidebar -->
 
     <!-- Main Footer -->
-    <?php include "assets/inc/footer.php"; ?>
+    <?php include_once "assets/inc/footer.php"; ?>
   </div>
   <!-- ./wrapper -->
 

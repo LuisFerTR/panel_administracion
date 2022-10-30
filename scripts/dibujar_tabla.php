@@ -1,6 +1,6 @@
 <?php
 
-require(dirname(__DIR__, 1) . '/vendor/autoload.php');
+require_once(dirname(__DIR__, 1) . '/vendor/autoload.php');
 
 
 function dibujar_tabla(string $tabla)
@@ -12,9 +12,33 @@ function dibujar_tabla(string $tabla)
 
     $client = new GuzzleHttp\Client();
     $res = $client->get($recurso);
+    $tablaSQL = json_decode($res->getBody(), true);
 
+    $columnas = array_keys($tablaSQL[0]);
 
-    var_dump($recurso);
+    echo '<table id="piezas" class="table table-bordered table-hover">';
+    // Display table header
+    echo '<thead>';
+    echo '<tr>';
+    foreach ($columnas as $columna) {
+        echo '<th>' . htmlspecialchars($columna) . '</th>';
+    }
+    echo '</tr>';
+    echo '</thead>';
+
+    if ($tablaSQL) {
+        foreach ($tablaSQL as $fila) {
+            echo '<tr>';
+            foreach ($fila as $celda) {
+                echo '<td>' . htmlspecialchars($celda) . '</td>';
+            }
+            echo '</tr>';
+        }
+    } else {
+        echo '<tr><td colspan="' . $res->getStatusCode() . '">No hay registros</td></tr>';
+    }
+
+    echo '<table>';
     /*
 
     echo '<table>';
@@ -41,5 +65,3 @@ function dibujar_tabla(string $tabla)
     echo '</table>';
     */
 }
-
-dibujar_tabla("piezageneral");

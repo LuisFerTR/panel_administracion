@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inicio de sesión</title>
 
-  <?php include "../assets/inc/meta-pages.php"; ?>
+  <?php include_once "../assets/inc/meta-pages.php"; ?>
   <!-- Google Font: Source Sans Pro -->
 
 </head>
@@ -70,7 +70,7 @@
   </div>
   <!-- /.login-box -->
 
-  <?php include "../assets/inc/js-imports.php"; ?>
+  <?php include_once "../assets/inc/js-imports.php"; ?>
 </body>
 
 </html>
