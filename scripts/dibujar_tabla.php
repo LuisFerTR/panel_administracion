@@ -15,8 +15,9 @@ function dibujar_tabla(string $tabla)
     $tablaSQL = json_decode($res->getBody(), true);
 
     $columnas = array_keys($tablaSQL[0]);
+    array_push($columnas, 'Acciones');
 
-    echo '<table id="piezas" class="table table-bordered table-hover">';
+    echo '<table id="piezas" class="table table-bordered table-hover table-responsive">';
     // Display table header
     echo '<thead>';
     echo '<tr>';
@@ -32,6 +33,9 @@ function dibujar_tabla(string $tabla)
             foreach ($fila as $celda) {
                 echo '<td>' . htmlspecialchars($celda) . '</td>';
             }
+            $botonActualizar = '<a href="#" class="btn btn-primary btn-sm rounded-0" style="margin-bottom: 1em;"> <i class="fa fa-edit"> </i> </a>';
+            $botonEliminar = '<a href="#" class="btn btn-danger btn-sm rounded-0"> <i class="fas fa-trash-alt"> </i> </a>';
+            echo '<td class="d-flex flex-column justify-content-between">' . $botonActualizar . ' ' . $botonEliminar . '</td>';
             echo '</tr>';
         }
     } else {
