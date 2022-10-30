@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Piezas</title>
 
-  <?php include_once "../assets/inc/meta-pages.php"; ?>
+  <?php require_once "../assets/inc/meta.php"; ?>
   <!-- DataTables -->
   <link rel="stylesheet" href="../assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -16,11 +16,11 @@
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <!-- Navbar -->
-    <?php include_once "../assets/inc/nav-pages.php"; ?>
+    <?php require_once "../assets/inc/nav.php"; ?>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <?php include_once "../assets/inc/sidebar-pages.php"; ?>
+    <?php require_once "../assets/inc/sidebar.php"; ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -79,7 +79,7 @@
     </div>
     <!-- /.content-wrapper -->
 
-    <?php include_once "../assets/inc/footer-pages.php"; ?>
+    <?php require_once "../assets/inc/footer.php"; ?>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -89,9 +89,8 @@
   </div>
   <!-- ./wrapper -->
 
-  <?php include_once "../assets/inc/js-imports.php"; ?>
-  <!-- AdminLTE for demo purposes -->
-  <script src="../dist/js/demo.js"></script>
+  <?php require_once "../assets/inc/js-imports.php"; ?>
+
 </body>
 
 </html>

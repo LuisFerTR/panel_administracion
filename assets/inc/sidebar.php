@@ -23,8 +23,8 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <!-- Opciones del panel -->
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                <li class="nav-item con-menu">
+                    <a href="#" class="nav-link titulo-menu">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Usuarios
@@ -33,37 +33,37 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                            <a href="<?php echo $_ENV['RAIZ']; ?>pages/alumnos.php" class="nav-link" data-link="alumnos">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Alumnos</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
+                            <a href="./index2.html" class="nav-link" data-link="profesores">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Profesores</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
+                            <a href="./index3.html" class="nav-link" data-link="investigadores">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Investigadores</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
+                            <a href="./index3.html" class="nav-link" data-link="encargados">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Encargados</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
+                            <a href="./index3.html" class="nav-link" data-link="trabajadores">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Trabajadores</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
+                            <a href="./index3.html" class="nav-link" data-link="administradores">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Administradores</p>
                             </a>
@@ -72,20 +72,18 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="pages/piezas.php" class="nav-link">
+                    <a href="<?php echo $_ENV['RAIZ']; ?>pages/piezas.php" class="nav-link" data-link="piezas">
                         <i class="nav-icon fas fa-tools"></i>
                         <p>
                             Piezas
-                            <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
+                    <a href="<?php echo $_ENV['RAIZ']; ?>pages/widgets.html" class="nav-link" data-link="maquinas">
                         <i class="nav-icon fas fa-robot"></i>
                         <p>
                             Máquinas
-                            <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
                 </li>

@@ -6,17 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Crear Pieza</title>
 
-  <?php include_once "../assets/inc/meta-pages.php"; ?>
+  <?php include_once "../assets/inc/meta.php"; ?>
 </head>
 
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <!-- Navbar -->
-    <?php include_once "../assets/inc/nav-pages.php"; ?>
+    <?php include_once "../assets/inc/nav.php"; ?>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <?php include_once "../assets/inc/sidebar-pages.php"; ?>
+    <?php include_once "../assets/inc/sidebar.php"; ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -113,7 +113,7 @@
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    <?php include_once "../assets/inc/footer-pages.php"; ?>
+    <?php include_once "../assets/inc/footer.php"; ?>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">

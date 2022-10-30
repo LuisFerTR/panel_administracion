@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inicio de sesión</title>
 
-  <?php include_once "../assets/inc/meta-pages.php"; ?>
+  <?php include_once "../assets/inc/meta.php"; ?>
   <!-- Google Font: Source Sans Pro -->
 
 </head>
