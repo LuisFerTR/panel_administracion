@@ -1,0 +1,5 @@
+.form-group .custom-file-input:lang(en)~.custom-file-label::after {
+
+    content: "Examinar";
+
+}

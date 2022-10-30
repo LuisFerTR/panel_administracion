@@ -18,3 +18,5 @@
 <link rel="stylesheet" href="../assets/plugins/daterangepicker/daterangepicker.css">
 <!-- summernote -->
 <link rel="stylesheet" href="../assets/plugins/summernote/summernote-bs4.min.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="../assets/css/style.css">
