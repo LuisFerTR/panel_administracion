@@ -29,7 +29,7 @@ function dibujar_tabla(string $tabla)
 
     if ($tablaSQL) {
         foreach ($tablaSQL as $fila) {
-            echo '<tr>';
+            echo '<tr id="' . htmlspecialchars($fila['ID_pieza']) . '">';
             foreach ($fila as $celda) {
                 echo '<td>' . htmlspecialchars($celda) . '</td>';
             }
