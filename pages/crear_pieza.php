@@ -10,7 +10,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
-  
+
   <div class="wrapper">
     <!-- Navbar -->
     <?php include_once "../assets/inc/nav.php"; ?>
@@ -53,7 +53,7 @@
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form action="#" id="registro">
-                <input type="hidden" id="url_fetch" value="<?php echo $_ENV['RAIZ'] . 'scripts/registro_pieza.php' ?>">
+                  <input type="hidden" id="url_fetch" value="<?php echo $_ENV['RAIZ'] . 'scripts/registro_pieza.php' ?>">
                   <div class="card-body">
                     <div class="form-group">
                       <label for="nombre">Nombre</label>
@@ -87,7 +87,7 @@
                     </div>
                     <div class="form-group">
                       <label>Descripción</label>
-                      <textarea class="form-control" id="descripcion" rows="3" placeholder="Describe la pieza" ></textarea>
+                      <textarea class="form-control" id="descripcion" rows="3" placeholder="Describe la pieza"></textarea>
                     </div>
                     <div class="form-group">
                       <label>Observaciones</label>

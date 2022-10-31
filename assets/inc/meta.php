@@ -25,3 +25,4 @@ $dotenv->load();
 <!-- summernote -->
 <link rel="stylesheet" href="<?php echo $_ENV['RAIZ']; ?>assets/plugins/summernote/summernote-bs4.min.css">
 
+<link rel="stylesheet" href="<?php echo $_ENV['RAIZ']; ?>assets/css/style.css">
