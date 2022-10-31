@@ -10,6 +10,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
+  
   <div class="wrapper">
     <!-- Navbar -->
     <?php include_once "../assets/inc/nav.php"; ?>
@@ -51,11 +52,13 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form>
+                <form action="#" id="registro">
+                <input type="hidden" id="url_fetch" value="<?php echo $_ENV['RAIZ'] . 'scripts/registro_pieza.php' ?>">
                   <div class="card-body">
                     <div class="form-group">
                       <label for="nombre">Nombre</label>
                       <input type="text" class="form-control" id="nombre" placeholder="Nombre de la pieza">
+
                     </div>
                     <div class="form-group">
                       <label for="cant_total">Cantidad total</label>
@@ -67,28 +70,28 @@
                     </div>
                     <div class="form-group">
                       <label>Ubicación</label>
-                      <select class="form-control">
+                      <select class="form-control" id="ubicacion">
                         <!--- Generar con php --->
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                       </select>
                     </div>
                     <div class="form-group">
                       <label for="imagen-pieza">Imagen</label>
 
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="imagen-pieza">
-                        <label class="custom-file-label" for="imagen-pieza">Subir imagen</label>
+                        <input type="file" class="custom-file-input" id="imagen_pieza" accept="image/png, image/jpeg">
+                        <label class="custom-file-label" for="imagen_pieza">Subir imagen</label>
                       </div>
                     </div>
                     <div class="form-group">
                       <label>Descripción</label>
-                      <textarea class="form-control" rows="3" placeholder="Describe la pieza" disabled></textarea>
+                      <textarea class="form-control" id="descripcion" rows="3" placeholder="Describe la pieza" ></textarea>
                     </div>
                     <div class="form-group">
                       <label>Observaciones</label>
-                      <textarea class="form-control" rows="3" placeholder="Observaciones de la pieza" disabled></textarea>
+                      <textarea class="form-control" id="observaciones" rows="3" placeholder="Observaciones de la pieza"></textarea>
                     </div>
                     <label for="valor">Valor</label>
                     <div class="input-group">
@@ -103,6 +106,8 @@
                   <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Agregar</button>
                   </div>
+
+
                 </form>
               </div>
               <!-- /.card -->
@@ -123,6 +128,7 @@
   </div>
   <!-- ./wrapper -->
 
+  <script src="<?php echo $_ENV['RAIZ']; ?>assets/js/leerForm.js"></script>
   <!-- jQuery -->
   <script src="../../plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
