@@ -58,22 +58,23 @@
 
                 </div>
                 <!-- /.card-header -->
-                <div class="card-body">
-                  <?php
-                  require_once(dirname(__DIR__, 1) . '/scripts/dibujar_tabla.php');
+                <div type="hidden" id="url_fetch" value="<?php echo $_ENV['RAIZ'] . 'scripts/eliminar_pieza.php' ?>">
+                  <div class="card-body">
+                    <?php
+                    require_once(dirname(__DIR__, 1) . '/scripts/dibujar_tabla.php');
 
-                  dibujar_tabla("piezageneral");
-                  ?>
+                    dibujar_tabla("piezageneral");
+                    ?>
+                  </div>
+                  <!-- /.card-body -->
                 </div>
-                <!-- /.card-body -->
+                <!-- /.card -->
               </div>
-              <!-- /.card -->
+              <!-- /.col -->
             </div>
-            <!-- /.col -->
+            <!-- /.row -->
           </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
+          <!-- /.container-fluid -->
       </section>
       <!-- /.content -->
     </div>
@@ -90,6 +91,13 @@
   <!-- ./wrapper -->
 
   <?php require_once "../assets/inc/js-imports.php"; ?>
+
+  <script src="<?php echo $_ENV['RAIZ']; ?>assets/js/eliminarPieza.js"></script>
+  <script>
+    $(function() {
+      bsCustomFileInput.init();
+    });
+  </script>
 
 </body>
 
