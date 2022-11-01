@@ -58,41 +58,40 @@
 
                 </div>
                 <!-- /.card-header -->
-                <div type="hidden" id="url_fetch" value="<?php echo $_ENV['RAIZ'] . 'scripts/eliminar_pieza.php' ?>">
-                  <div class="card-body">
-                    <?php
-                    require_once(dirname(__DIR__, 1) . '/scripts/dibujar_tabla.php');
+                <input type="hidden" id="url_fetch" value="<?php echo $_ENV['RUTA'] . 'piezageneral/' ?>">
+                <?php
+                require_once(dirname(__DIR__, 1) . '/scripts/dibujar_tabla.php');
 
-                    dibujar_tabla("piezageneral");
-                    ?>
-                  </div>
-                  <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
+                dibujar_tabla("piezageneral");
+                ?>
               </div>
-              <!-- /.col -->
+              <!-- /.card-body -->
             </div>
-            <!-- /.row -->
+            <!-- /.card -->
           </div>
-          <!-- /.container-fluid -->
-      </section>
-      <!-- /.content -->
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
     </div>
-    <!-- /.content-wrapper -->
+    <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 
-    <?php require_once "../assets/inc/footer.php"; ?>
+  <?php require_once "../assets/inc/footer.php"; ?>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
 
   <?php require_once "../assets/inc/js-imports.php"; ?>
 
-  <script src="<?php echo $_ENV['RAIZ']; ?>assets/js/eliminarPieza.js"></script>
+  <script src="<?php echo $_ENV['RAIZ']; ?>assets/js/accionesPieza.js"></script>
   <script>
     $(function() {
       bsCustomFileInput.init();
