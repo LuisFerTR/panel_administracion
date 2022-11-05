@@ -29,12 +29,19 @@ function dibujar_tabla(string $tabla)
 
     if ($tablaSQL) {
         foreach ($tablaSQL as $fila) {
-            echo '<tr id="' . htmlspecialchars($fila['ID_pieza']) . '">';
+            $id = $fila['ID_pieza'];
+
+            echo '<tr id="' . htmlspecialchars($id) . '">';
             foreach ($fila as $celda) {
                 echo '<td>' . htmlspecialchars($celda) . '</td>';
             }
-            $botonActualizar = '<a href="#" class="btn btn-primary btn-sm rounded-0 btnActualizar" style="margin-bottom: 1em;" id="btnActualizar' . htmlspecialchars($fila['ID_pieza']) . '"> <i class="fa fa-edit"> </i> </a>';
-            $botonEliminar = '<a href="#" class="btn btn-danger btn-sm rounded-0 btnEliminar" id="btnEliminar' . htmlspecialchars($fila['ID_pieza']) . '"> <i class="fas fa-trash-alt"> </i> </a>';
+
+            // Crear botón actualizar
+            $botonActualizar = '<a href="./actualizar_pieza.php?id=' . htmlspecialchars($id) . '" class="btn btn-primary btn-sm rounded-0 btnActualizar" style="margin-bottom: 1em;" id="btnActualizar' . htmlspecialchars($id) . '"> <i class="fa fa-edit"> </i> </a>';
+
+            // Crear botón eliminar
+            $botonEliminar = '<a href="#" class="btn btn-danger btn-sm rounded-0 btnEliminar" id="btnEliminar' . htmlspecialchars($id) . '"> <i class="fas fa-trash-alt"> </i> </a>';
+
             echo '<td class="d-flex flex-column justify-content-between">' . $botonActualizar . ' ' . $botonEliminar . '</td>';
             echo '</tr>';
         }

@@ -4,21 +4,22 @@
 const url_fetch = document.getElementById('url_fetch').value;
 
 // Botones de actualizar
-var anchorsActualizar = document.querySelectorAll('.btnActualizar');
+//var anchorsActualizar = document.querySelectorAll('.btnActualizar');
 // Botones de eliminar
 var anchorsEliminar = document.querySelectorAll('.btnEliminar');
 
 // Recorrer botones de actualizar
-for (var i = 0; i < anchorsActualizar.length; i++) {
+/*for (var i = 0; i < anchorsActualizar.length; i++) {
     // Qué hacer cuando el usuario haga click sobre el botón
     anchorsActualizar[i].addEventListener('click', (e) => {
         e.preventDefault();
 
         fila = e.currentTarget.parentNode.parentNode;
         piezaID = fila.id;
+        console.log(piezaID)
 
     }, false);
-}
+}*/
 
 // Recorrer botones de eliminar
 for (var i = 0; i < anchorsEliminar.length; i++) {
@@ -27,9 +28,15 @@ for (var i = 0; i < anchorsEliminar.length; i++) {
         e.preventDefault();
 
         fila = e.currentTarget.parentNode.parentNode;
+
+        // Aquí debería ir el código para preguntarle
+        // al usuario si esta seguro de eliminar la pieza
+
+
+        // Remover de la tabla HTML
         fila.parentNode.removeChild(fila);
 
-
+        // Remover de la BD
         // Petición para eliminar pieza
         var headers = new Headers();
         headers.append("Content-Type", "application/json");
