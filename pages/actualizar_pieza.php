@@ -54,6 +54,8 @@
                                 <!-- form start -->
                                 <form action="#" id="actualizar">
                                     <div class="card-body">
+                                        <input type="hidden" id="changed" name="changed" value="yes" />
+                                        <input type="hidden" id="url_fetch" value="<?php echo $_ENV['RAIZ'] . 'scripts/actualizar_pieza.php' ?>">
                                         <?php
                                         require_once(dirname(__DIR__, 1) . '/scripts/dibujar_form_actualizar_pieza.php');
 
@@ -63,7 +65,7 @@
                                     <!-- /.card-body -->
 
                                     <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary" disabled>Actualizar</button>
+                                        <button type="submit" class="btn btn-primary" enabled>Actualizar</button>
                                     </div>
 
 
@@ -87,7 +89,7 @@
     </div>
     <!-- ./wrapper -->
 
-    <script src="<?php echo $_ENV['RAIZ']; ?>assets/js/leerForm.js"></script>
+    <script src="<?php echo $_ENV['RAIZ']; ?>assets/js/revisarForm.js"></script>
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
