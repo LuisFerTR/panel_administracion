@@ -1,6 +1,7 @@
 
-const form  = document.getElementById('actualizar');
+const form = document.getElementById('actualizar');
 const url_fetch = document.getElementById('url_fetch').value;
+const url_fetch_imagen = document.getElementById('url_fetch_imagen').value;
 const idPieza = document.getElementById('idPieza').value;
 
 form.addEventListener('submit', (e) => {
@@ -11,11 +12,9 @@ form.addEventListener('submit', (e) => {
     elementos = FormChanges(form);
     //en caso de que no se cambie nada, elementos será un arreglo vacio
 
-    if( typeof elementos !== 'undefined' && elementos.length > 0)
-    {
+    if (typeof elementos !== 'undefined' && elementos.length > 0) {
         console.log(elementos.length);
-        for(var i = 0 ; i < elementos.length; i++)
-        {
+        for (var i = 0; i < elementos.length; i++) {
             //regresa el campo que cambio elementos[i].id
             console.log(elementos[i].id);
             //USAR .value y .id
@@ -57,15 +56,6 @@ form.addEventListener('submit', (e) => {
                         "ubicacion": parseInt(nuevoValor)
                     });
                     uri = url_fetch + "update/ubicacion"
-                    break;
-
-                //TO DO hacer que la url imagen se cambie
-                case "urlimagen":
-                    var datos = JSON.stringify({
-                        "ID_pieza": parseInt(idPieza),
-                        "urlimagen": nuevoValor
-                    });
-                    uri = url_fetch + "update/urlimagen"
                     break;
 
                 case "descripcion":
@@ -110,9 +100,30 @@ form.addEventListener('submit', (e) => {
                 .then(result => console.log(result))
                 .catch(error => console.log('error', error));
         }
+
+        // Cambiar imagen
+        /*
+                        //TO DO hacer que la url imagen se cambie
+                case "urlimagen":
+                    var datos = JSON.stringify({
+                        "ID_pieza": parseInt(idPieza),
+                        "urlimagen": nuevoValor
+                    });
+                    uri = url_fetch + "update/urlimagen"
+                    break;
+        */
+
+        var datos = JSON.stringify({
+            "ID_pieza": parseInt(idPieza)
+        });
+        fetch(url_fetch_imagen, {
+            method: "POST",
+            body: datos
+        }).then(function (respuesta) {
+            return respuesta.json();
+        }).then(resultado => console.log(resultado));
     }
-    else
-    {
+    else {
         return;
     }
 });
@@ -120,12 +131,12 @@ form.addEventListener('submit', (e) => {
 function FormChanges(form) {
     if (typeof form == "string") form = document.getElementById(form);
     if (!form || !form.nodeName || form.nodeName.toLowerCase() != "form") return null;
-/*
-    changed arreglo de elementso que cambiaron
-    n nodo actual
-    c bandera
-    e cantidad de elementos 
-*/
+    /*
+        changed arreglo de elementso que cambiaron
+        n nodo actual
+        c bandera
+        e cantidad de elementos 
+    */
     var changed = [], n, c, def, o, ol, opt;
 
     for (var e = 0, el = form.elements.length; e < el; e++) {

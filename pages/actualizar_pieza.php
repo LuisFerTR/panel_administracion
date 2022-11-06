@@ -32,7 +32,7 @@
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
                                 <li class="breadcrumb-item"><a href="piezas.php">Piezas</a></li>
-                                <li class="breadcrumb-item active">Crear Pieza</li>
+                                <li class="breadcrumb-item active">Actualizar Pieza</li>
                             </ol>
                         </div>
                     </div>
@@ -55,8 +55,9 @@
                                 <form action="#" id="actualizar">
                                     <div class="card-body">
                                         <input type="hidden" id="changed" name="changed" value="yes" />
-                                        <input type="hidden" id="idPieza" name="idPieza" value = "<?php echo $_GET['id']?>">
+                                        <input type="hidden" id="idPieza" name="idPieza" value="<?php echo $_GET['id'] ?>">
                                         <input type="hidden" id="url_fetch" value="<?php echo $_ENV['RUTA'] . 'piezageneral/' ?>">
+                                        <input type="hidden" id="url_fetch_imagen" value="<?php echo $_ENV['RAIZ'] . 'scripts/subir_imagen_pieza.php' ?>">
                                         <?php
                                         require_once(dirname(__DIR__, 1) . '/scripts/dibujar_form_actualizar_pieza.php');
 
