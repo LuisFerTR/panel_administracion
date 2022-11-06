@@ -54,7 +54,6 @@
                                 <!-- form start -->
                                 <form action="#" id="actualizar">
                                     <div class="card-body">
-                                        <input type="hidden" id="changed" name="changed" value="yes" />
                                         <input type="hidden" id="idPieza" name="idPieza" value="<?php echo $_GET['id'] ?>">
                                         <input type="hidden" id="url_fetch" value="<?php echo $_ENV['RUTA'] . 'piezageneral/' ?>">
                                         <input type="hidden" id="url_fetch_imagen" value="<?php echo $_ENV['RAIZ'] . 'scripts/subir_imagen_pieza.php' ?>">
@@ -103,11 +102,6 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
     <!-- Page specific script -->
-    <script>
-        $(function() {
-            bsCustomFileInput.init();
-        });
-    </script>
 </body>
 
 </html>

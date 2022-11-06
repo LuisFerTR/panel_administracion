@@ -7,6 +7,7 @@ $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 1));
 $dotenv->load();
 
 if (isset($_FILES['imagen'])) {
+    echo "Ya entre al if";
 
     if ($_FILES['imagen']['error'] == 4) {
         $body = array(
@@ -41,6 +42,6 @@ if (isset($_FILES['imagen'])) {
             echo $th;
         }
 
-        echo json_encode($body);
+        return json_encode($body);
     }
 }
