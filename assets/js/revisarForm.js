@@ -82,6 +82,15 @@ form.addEventListener('submit', (e) => {
                     uri = url_fetch + "update/valor"
                     break;
 
+                case "imagen_pieza":
+                    let imagen = elementos[i].files;
+                    imagen = imagen[0];
+                    const datos = new FormData();
+                    datos.append("ID_pieza", parseInt(idPieza))
+                    datos.append("imagen", imagen);
+                    uri = url_fetch_imagen
+                    break;
+
                 default:
                     console.log(campo);
                     console.log(nuevoValor);
@@ -100,31 +109,9 @@ form.addEventListener('submit', (e) => {
                 .then(result => console.log(result))
                 .catch(error => console.log('error', error));
         }
-
-        // Cambiar imagen
-        /*
-                        //TO DO hacer que la url imagen se cambie
-                case "urlimagen":
-                    var datos = JSON.stringify({
-                        "ID_pieza": parseInt(idPieza),
-                        "urlimagen": nuevoValor
-                    });
-                    uri = url_fetch + "update/urlimagen"
-                    break;
-        */
-
-        var datos = JSON.stringify({
-            "ID_pieza": parseInt(idPieza)
-        });
-        fetch(url_fetch_imagen, {
-            method: "POST",
-            body: datos
-        }).then(function (respuesta) {
-            return respuesta.json();
-        }).then(resultado => console.log(resultado));
     }
     else {
-        return;
+        alert("No entro al if");
     }
 });
 
