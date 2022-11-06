@@ -55,7 +55,8 @@
                                 <form action="#" id="actualizar">
                                     <div class="card-body">
                                         <input type="hidden" id="changed" name="changed" value="yes" />
-                                        <input type="hidden" id="url_fetch" value="<?php echo $_ENV['RAIZ'] . 'scripts/actualizar_pieza.php' ?>">
+                                        <input type="hidden" id="idPieza" name="idPieza" value = "<?php echo $_GET['id']?>">
+                                        <input type="hidden" id="url_fetch" value="<?php echo $_ENV['RUTA'] . 'piezageneral/' ?>">
                                         <?php
                                         require_once(dirname(__DIR__, 1) . '/scripts/dibujar_form_actualizar_pieza.php');
 

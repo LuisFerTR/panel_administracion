@@ -1,47 +1,122 @@
 
 const form  = document.getElementById('actualizar');
 const url_fetch = document.getElementById('url_fetch').value;
+const idPieza = document.getElementById('idPieza').value;
+
 form.addEventListener('submit', (e) => {
 
     e.preventDefault();
 
-    console.log(FormChanges('actualizar'));
-    /*
-    const nombre = form.elements['nombre'].value.trim();
-    const cantidad_total = form.elements['cant_total'].value.trim();
-    const cant_disponible = form.elements['cant_disponible'].value.trim();
-    const ubicacion = form.elements['ubicacion'].value.trim();
-    let imagen = form.elements['imagen_pieza'].files;
-    const descripcion = form.elements['descripcion'].value.trim();
-    const observaciones = form.elements['observaciones'].value.trim();
-    const valor = form.elements['valor'].value.trim();
+    //elementos del form que fueron modificados
+    elementos = FormChanges(form);
+    //en caso de que no se cambie nada, elementos será un arreglo vacio
 
-    if(nombre === "" || cant_disponible === "" || cantidad_total === "" || ubicacion === "" || descripcion === "" || observaciones === "" || valor === "" || imagen.length === 0)
+    if( typeof elementos !== 'undefined' && elementos.length > 0)
     {
-        return ;
+        console.log(elementos.length);
+        for(var i = 0 ; i < elementos.length; i++)
+        {
+            //regresa el campo que cambio elementos[i].id
+            console.log(elementos[i].id);
+            //USAR .value y .id
+
+            //to do FALTA el caso de la imagenders
+            campo = elementos[i].id;
+            nuevoValor = elementos[i].value;
+
+
+            switch (campo) {
+
+                case "nombre":
+                    var datos = JSON.stringify({
+                        "ID_pieza": parseInt(idPieza),
+                        "nombre": nuevoValor
+                    });
+                    uri = url_fetch + "update/nombre"
+                    break;
+
+                case "cant_total":
+                    var datos = JSON.stringify({
+                        "ID_pieza": parseInt(idPieza),
+                        "cant_total": parseInt(nuevoValor)
+                    });
+                    uri = url_fetch + "update/cantTotal"
+                    break;
+
+                case "cant_disponible":
+                    var datos = JSON.stringify({
+                        "ID_pieza": parseInt(idPieza),
+                        "cant_disponible": parseInt(nuevoValor)
+                    });
+                    uri = url_fetch + "update/cantDisponible"
+                    break;
+
+                case "ubicacion":
+                    var datos = JSON.stringify({
+                        "ID_pieza": parseInt(idPieza),
+                        "ubicacion": parseInt(nuevoValor)
+                    });
+                    uri = url_fetch + "update/ubicacion"
+                    break;
+
+                //TO DO hacer que la url imagen se cambie
+                case "urlimagen":
+                    var datos = JSON.stringify({
+                        "ID_pieza": parseInt(idPieza),
+                        "urlimagen": nuevoValor
+                    });
+                    uri = url_fetch + "update/urlimagen"
+                    break;
+
+                case "descripcion":
+                    var datos = JSON.stringify({
+                        "ID_pieza": parseInt(idPieza),
+                        "descripcion": nuevoValor
+                    });
+                    uri = url_fetch + "update/descripcion"
+                    break;
+
+                case "observaciones":
+                    var datos = JSON.stringify({
+                        "ID_pieza": parseInt(idPieza),
+                        "observaciones": nuevoValor
+                    });
+                    uri = url_fetch + "update/observaciones"
+                    break;
+
+                case "valor":
+                    var datos = JSON.stringify({
+                        "ID_pieza": parseInt(idPieza),
+                        "valor": parseFloat(nuevoValor).toFixed(2)
+                    });
+                    uri = url_fetch + "update/valor"
+                    break;
+
+                default:
+                    console.log(campo);
+                    console.log(nuevoValor);
+            }
+            var headers = new Headers();
+            headers.append("Content-Type", "application/json");
+
+            var opcionesPeticion = {
+                method: 'POST',
+                headers: headers,
+                body: datos
+            };
+
+            fetch(uri, opcionesPeticion)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+        }
     }
+    else
+    {
+        return;
+    }
+});
 
-    imagen = imagen[0];
-    
-    const datos = new FormData();
-    datos.append("nombre", nombre);
-    datos.append("cantidad_total", cantidad_total);
-    datos.append("cantidad_disponible", cant_disponible);
-    datos.append("ubicacion", ubicacion);
-    datos.append("imagen", imagen);
-    datos.append("descripcion", descripcion);
-    datos.append("observaciones", observaciones);
-    datos.append("valor", valor);
-
-    fetch(url_fetch, {
-        method:"POST",
-        body : datos
-    }).then(function(respuesta){
-        return respuesta.json();
-    }).then(resultado => console.log(resultado));
-    */
-    
-}); 
 function FormChanges(form) {
     if (typeof form == "string") form = document.getElementById(form);
     if (!form || !form.nodeName || form.nodeName.toLowerCase() != "form") return null;
