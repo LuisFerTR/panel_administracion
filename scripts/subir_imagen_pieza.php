@@ -7,8 +7,6 @@ $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 1));
 $dotenv->load();
 
 if (isset($_FILES['imagen'])) {
-    echo "Ya entre al if";
-
     if ($_FILES['imagen']['error'] == 4) {
         $body = array(
             "estado" => "No se ha subido una imagen"
