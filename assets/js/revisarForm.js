@@ -15,14 +15,12 @@ form.addEventListener('submit', (e) => {
     if (typeof elementos !== 'undefined' && elementos.length > 0) {
         console.log(elementos.length);
         for (var i = 0; i < elementos.length; i++) {
-            //regresa el campo que cambio elementos[i].id
+            // Regresa el campo que cambio elementos[i].id
             console.log(elementos[i].id);
             //USAR .value y .id
 
-            //to do FALTA el caso de la imagenders
             campo = elementos[i].id;
             nuevoValor = elementos[i].value;
-
 
             switch (campo) {
 
@@ -83,7 +81,6 @@ form.addEventListener('submit', (e) => {
                     break;
 
                 case "imagen_pieza":
-                    //alert("QUIETO")
                     let imagen = elementos[i].files;
                     imagen = imagen[0];
                     var datos = new FormData();
@@ -110,7 +107,7 @@ form.addEventListener('submit', (e) => {
         }
     }
     else {
-        alert("No entro al if");
+        return;
     }
 });
 

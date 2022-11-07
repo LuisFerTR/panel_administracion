@@ -1,8 +1,8 @@
 <?php
 //echo json_encode($_POST);
-echo json_encode($_FILES);
+//echo json_encode($_FILES);
 
-/*require_once(dirname(__DIR__, 1) . '/vendor/autoload.php');
+require_once(dirname(__DIR__, 1) . '/vendor/autoload.php');
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 1));
 $dotenv->load();
 
@@ -44,4 +44,4 @@ if (isset($_FILES['imagen'])) {
 
         echo json_encode($body);
     }
-}*/
+}
