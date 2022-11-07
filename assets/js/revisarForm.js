@@ -83,9 +83,10 @@ form.addEventListener('submit', (e) => {
                     break;
 
                 case "imagen_pieza":
+                    //alert("QUIETO")
                     let imagen = elementos[i].files;
                     imagen = imagen[0];
-                    const datos = new FormData();
+                    var datos = new FormData();
                     datos.append("ID_pieza", parseInt(idPieza))
                     datos.append("imagen", imagen);
                     uri = url_fetch_imagen
@@ -95,12 +96,10 @@ form.addEventListener('submit', (e) => {
                     console.log(campo);
                     console.log(nuevoValor);
             }
-            var headers = new Headers();
-            headers.append("Content-Type", "application/json");
+
 
             var opcionesPeticion = {
                 method: 'POST',
-                headers: headers,
                 body: datos
             };
 
